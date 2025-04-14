@@ -1,2 +1,2 @@
 # alx-backend-javascript
-Specialization track for the ALX Software Engineering Program focused on backend development using JavaScript (Node.js).
+This repository contains coursework and projects for the **Backend Specialization** using **JavaScript (Node.js)** as part of the ALX Software Engineering Program.
