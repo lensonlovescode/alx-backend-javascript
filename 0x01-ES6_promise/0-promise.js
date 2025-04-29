@@ -1,9 +1,9 @@
 export default function getResponseFromAPI() {
   return new Promise((resolve, reject) => {
-    if (True) {
+    if (true) {
       resolve('Promise type');
     } else {
       reject('No promise type');
     }
-  })
+  });
 }
