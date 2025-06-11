@@ -1,4 +1,4 @@
-function extractSetGroup (arr) {
+function extractSetGroup(arr) {
   listGroup = [];
   arr.forEach((line) => {
     smallArr = line.split(',');
@@ -7,7 +7,7 @@ function extractSetGroup (arr) {
   setGroup = new Set(listGroup);
   return setGroup;
 }
-function numberOfStudents (arr, group) {
+function numberOfStudents(arr, group) {
   stdArr = [];
   arr.forEach((item) => {
     itemArray = item.split(',');
@@ -17,7 +17,7 @@ function numberOfStudents (arr, group) {
   });
   console.log(`Number of students in ${group}: ${stdArr.length}. List: ${stdArr.join(', ')}`);
 }
-function countStudents (path) {
+function countStudents(path) {
   const fs = require('fs');
   try {
     const data = fs.readFileSync(path, 'utf-8');
