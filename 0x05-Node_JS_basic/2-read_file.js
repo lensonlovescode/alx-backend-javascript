@@ -31,9 +31,7 @@ function countStudents (path) {
       numberOfStudents(arr.slice(1), group);
     });
   } catch (err) {
-    if (err.code === 'ENOENT') {
-      console.log('Cannot load the database');
-    }
+      throw new Error('Cannot load the database');
   }
 }
 module.exports = countStudents;
