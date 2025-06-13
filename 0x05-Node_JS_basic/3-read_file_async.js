@@ -15,7 +15,9 @@ function numberOfStudents(arr, group) {
       stdArr.push(itemArray[0]);
     }
   });
-  console.log(`Number of students in ${group}: ${stdArr.length}. List: ${stdArr.join(', ')}`);
+  msg = `Number of students in ${group}: ${stdArr.length}. List: ${stdArr.join(', ')}`;
+  console.log(msg);
+  return msg;
 }
 function countStudents(path) {
   return new Promise((resolve, reject) => {
@@ -23,16 +25,20 @@ function countStudents(path) {
     fs.readFile(path, 'utf-8', (err, data) => {
       if (err) {
         reject(new Error('Cannot load the database'));
-        return
+        return;
       }
       const pre_arr = data.split('\n');
       const arr = pre_arr.filter((line) => line.trim() !== '');
-      console.log(`Number of students: ${arr.length - 1}`);
+      finalmsg = `Number of students: ${arr.length - 1}\n`;
+      msg = `Number of students: ${arr.length - 1}`;
+      console.log(msg);
       groups = extractSetGroup(arr.slice(1));
+      const groupMsgs = [];
       groups.forEach((group) => {
-        numberOfStudents(arr.slice(1), group);
+        groupMsgs.push(numberOfStudents(arr.slice(1), group));
       });
-      resolve(true)
+      finalmsg += groupMsgs.join('\n');
+      resolve(finalmsg);
     });
   });
 }
