@@ -14,7 +14,7 @@ const app = createServer((req, res) => {
   } else if (url === '/students') {
     countStudents(process.argv[2])
       .then((msg) => {
-        res.end('This is the list of our students\n' + msg);
+        res.end(`This is the list of our students\n${msg}`);
       })
       .catch(() => {
         res.end('This is the list of our students\nCannot load the database');
