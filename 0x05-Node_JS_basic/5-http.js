@@ -7,7 +7,7 @@ const hostname = '127.0.0.1';
 const app = createServer((req, res) => {
   res.statusCode = 200;
   res.setHeader('Content-Type', 'text/plain');
-  const url = req.url;
+  const { url } = req;
 
   if (url === '/') {
     res.end('Hello Holberton School!');
